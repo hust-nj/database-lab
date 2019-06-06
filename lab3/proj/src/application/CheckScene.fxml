@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<SplitPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.CheckSceneController">
+   <items>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <TabPane prefHeight="400.0" prefWidth="598.0" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab text="货单审核">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="193.0" prefWidth="260.0">
+                           <children>
+                              <ComboBox fx:id="numberComboBox" layoutX="304.0" layoutY="14.0" onAction="#OnActionNumberComboBox" onMouseClicked="#OnClickNumberComboBox" prefHeight="30.0" prefWidth="128.0" />
+                              <Label layoutX="231.0" layoutY="19.0" text="单号选择" />
+                              <TableView fx:id="checkTableView" layoutY="58.0" prefHeight="311.0" prefWidth="600.0">
+                                 <columns>
+                                    <TableColumn fx:id="idCol" prefWidth="98.0" style="-fx-alignment: CENTER;" text="序号" />
+                                    <TableColumn fx:id="gnoCol" prefWidth="100.0" style="-fx-alignment: CENTER;" text="货品号" />
+                                    <TableColumn fx:id="nameCol" prefWidth="100.0" style="-fx-alignment: CENTER;" text="货品名" />
+                                    <TableColumn fx:id="placeCol" prefWidth="100.0" style="-fx-alignment: CENTER;" text="存放地" />
+                                    <TableColumn fx:id="factoryCol" prefWidth="100.0" style="-fx-alignment: CENTER;" text="生产厂家" />
+                                    <TableColumn fx:id="amountCol" prefWidth="100.0" style="-fx-alignment: CENTER;" text="进/出货量" />
+                                 </columns>
+                              </TableView>
+                              <Label layoutX="32.0" layoutY="19.0" text="货单种类" />
+                              <ComboBox fx:id="typeComboBox" layoutX="105.0" layoutY="14.0" prefHeight="30.0" prefWidth="99.0" />
+                              <Button fx:id="checkPassButton" layoutX="474.0" layoutY="14.0" mnemonicParsing="false" onAction="#OnClickCheckPassButton" text="通过审核" />
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+                  <Tab text="库存查询">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="403.0" prefWidth="598.0">
+                           <children>
+                              <TableView fx:id="goodsTableView" layoutX="-1.0" layoutY="2.0" prefHeight="324.0" prefWidth="600.0">
+                                 <columns>
+                                    <TableColumn fx:id="goodsIdCol" prefWidth="66.0" style="-fx-alignment: CENTER;" text="序号" />
+                                    <TableColumn fx:id="goodsGnoCol" prefWidth="70.0" style="-fx-alignment: CENTER;" text="货品号" />
+                                    <TableColumn fx:id="goodsNameCol" prefWidth="162.0" style="-fx-alignment: CENTER;" text="货品名" />
+                                    <TableColumn fx:id="goodsPlaceCol" prefWidth="100.0" style="-fx-alignment: CENTER;" text="存放地" />
+                                    <TableColumn fx:id="goodsFactoryCol" prefWidth="100.0" style="-fx-alignment: CENTER;" text="生产厂家" />
+                                    <TableColumn fx:id="goodsAmountCol" prefWidth="100.0" style="-fx-alignment: CENTER;" text="库存量" />
+                                 </columns>
+                              </TableView>
+                              <Button fx:id="inquireGoodsButton" layoutX="259.0" layoutY="326.0" mnemonicParsing="false" onAction="#OnClickInquireGoodsButton" prefHeight="26.0" prefWidth="80.0" text="查询库存" />
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+              </tabs>
+            </TabPane>
+         </children>
+      </AnchorPane>
+   </items>
+</SplitPane>
